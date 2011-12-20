@@ -1,4 +1,18 @@
 a:hover {
 	text-decoration: none;
 }
+
+td, th {
+	vertical-align:top;
+}
+
+.views-view-grid.cols-5 td {
+	width: 19%;
+}
+.views-view-grid.cols-4 td {
+	width: 24%;
+}
+.views-view-grid.cols-3 td {
+	width: 32%;
+}
 	

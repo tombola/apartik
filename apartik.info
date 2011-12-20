@@ -1,6 +1,6 @@
 name = apartik
 description = bartik subtheme
-base theme = bartik
+base theme = antonelli
 core = 7.x
 engine = phptemplate
 
