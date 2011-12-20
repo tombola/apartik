@@ -23,15 +23,15 @@ body.overlay {
 }
 #header {
   background-color: DodgerBlue;
-  background-image: -moz-linear-gradient(top, gray 0%, DodgerBlue 100%);
-  background-image: -ms-linear-gradient(top, gray 0%, DodgerBlue 100%);
-  background-image: -o-linear-gradient(top, gray 0%, DodgerBlue 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, gray), color-stop(1, DodgerBlue));
-  background-image: -webkit-linear-gradient(top, gray 0%, DodgerBlue 100%);
-  background-image: linear-gradient(top, gray 0%, DodgerBlue 100%);
+  background-image: -moz-linear-gradient(top, #444 0%, #000 100%);
+  background-image: -ms-linear-gradient(top, #444 0%, #000 100%);
+  background-image: -o-linear-gradient(top, #444 0%, #000 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #444), color-stop(1, #000));
+  background-image: -webkit-linear-gradient(top, #444 0%, #000 100%);
+  background-image: linear-gradient(top, #444 0%, #000 100%);
 }
 a {
-  color: RoyalBlue;
+  color: #10A4E3;
 }
 a:hover,
 a:focus {
@@ -46,7 +46,7 @@ a:active {
 }
 #page-wrapper,
 #footer-wrapper {
-  background: DimGrey;
+  background: #333;
 }
 .region-header,
 .region-header a,
