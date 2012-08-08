@@ -1,0 +1,8 @@
+This is a clear and simple theme sub theme of the fluid version of bartik.
+see http://drupal.org/project/antonelli.
+
+Custom components that have been added to this theme:
+(these components may need to be copied to or reconstructed if another theme created)
+- A 'Homebox' template - http://drupal.org/project/homebox/
+  This template creates a link from the title of the dashboard panels to the views page view
+  specified by the block_title settings because home box does not implement views_preprocess
