@@ -5,9 +5,13 @@
  * homebox-block.tpl.php
  * Default theme implementation each homebox block.
  */
+# add link to homebox block titles if available from block_titlelink
 if (function_exists('_block_titlelink_get_data')) {
-  $titlelink = _block_titlelink_get_data($block); 
-  $titlelink = url($titlelink['url']);
+  $titlelink = _block_titlelink_get_data($block);
+  $attributes['query'] = (isset($titlelink['query'])) ? $titlelink['query'] : NULL;
+  $block->subject = l($block->subject, $titlelink['url'], $attributes);  
+} else {
+  $subject = $block->subject;
 }
 ?>
 <div id="homebox-block-<?php print $block->key; ?>" class="<?php print $block->homebox_classes ?> clear-block block block-<?php print $block->module ?>">
@@ -21,7 +25,7 @@ if (function_exists('_block_titlelink_get_data')) {
       <?php if ($page->settings['color'] || isset($block->edit_form)): ?>
         <a class="portlet-icon portlet-settings"></a>
       <?php endif; ?>
-      <span class="portlet-title"><a href="<?php print $titlelink; ?>"><?php print $block->subject ?></a></span>
+      <span class="portlet-title"><?php print $block->subject ?></span>
     </h3>
     <div class="portlet-config">
       <?php if ($page->settings['color']): ?>
