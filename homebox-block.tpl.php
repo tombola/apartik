@@ -8,11 +8,13 @@
 # add link to homebox block titles if available from block_titlelink
 if (function_exists('_block_titlelink_get_data')) {
   $titlelink = _block_titlelink_get_data($block);
-  $attributes['query'] = (isset($titlelink['query'])) ? $titlelink['query'] : NULL;
-  $block->subject = l($block->subject, $titlelink['url'], $attributes);  
-} else {
-  $subject = $block->subject;
+  $display = (isset($titlelink['display'])) ? $titlelink['display'] : TRUE;
+  if ($titlelink && $display) {
+    $attributes['query'] = (isset($titlelink['query'])) ? $titlelink['query'] : NULL;
+    $block->subject = l($block->subject, $titlelink['url'], $attributes);
+  }
 }
+
 ?>
 <div id="homebox-block-<?php print $block->key; ?>" class="<?php print $block->homebox_classes ?> clear-block block block-<?php print $block->module ?>">
   <div class="homebox-portlet-inner">
