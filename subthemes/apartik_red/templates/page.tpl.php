@@ -153,6 +153,7 @@
             'class' => array('element-invisible'),
           ),
         )); ?>
+        <?php print $page['user_roles']; ?>
       </div> <!-- /#secondary-menu -->
     <?php endif; ?>
 
