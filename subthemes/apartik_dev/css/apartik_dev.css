@@ -1,0 +1,36 @@
+a:hover {
+	text-decoration: none;
+}
+
+td, th {
+	vertical-align:top;
+}
+
+.views-view-grid.cols-5 td {
+	width: 19%;
+}
+.views-view-grid.cols-4 td {
+	width: 24%;
+}
+.views-view-grid.cols-3 td {
+	width: 32%;
+}
+
+#name-and-slogan {
+	/* padding-top: 54px;
+	margin-left: 0; */
+}
+
+#dev-info {
+  text-align: right; 
+  position: absolute; 
+  /* top: 80px; */
+  top: 80px;
+  /* bottom: 10px; */
+  right: 10px; 
+  margin-right:10px;
+}
+
+#header {
+  position:relative;
+}
