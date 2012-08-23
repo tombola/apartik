@@ -5,6 +5,7 @@ core = 7.x
 engine = phptemplate
 
 stylesheets[all][] = css/colors.css
+stylesheets[all][] = css/displaysuite.css
 stylesheets[screen][] = css/apartik_dev.css
 
 regions[header] = Header

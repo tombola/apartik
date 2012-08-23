@@ -1,0 +1,20 @@
+.group-left .form-wrapper {
+  padding-right:20px;
+}
+
+.group-left {
+  overflow: hidden;
+}
+
+/* This is just a fix for overflow problem in chrome! */
+.group-left fieldset.form-wrapper  {
+  width: 90%;
+}
+
+.group-left select {
+  width: 100%;
+}
+
+.form-type-date-select .date-padding {
+  width:100%;
+}
