@@ -21,15 +21,16 @@ function apartik_process_page(&$variables) {
   }
 }
 
-
+// Name module includes all titles - hide unless professional
 function apartik_preprocess_field(&$variables) {
   if($variables['element']['#field_name'] == 'field_title_name') {
     //if($variables['items']['0']['#markup'] == 'thedefaultvalue') {
-      $variables['items']['0']['#markup'] = preg_replace('/^Mr./','', $variables['items']['0']['#markup']);
+      $variables['items']['0']['#markup'] = _hide_name_titles($variables['items']['0']['#markup']); //preg_replace('/^Mr./','', $variables['items']['0']['#markup']);
     //}
   }
 }
-// altered from name.module to vary rendering according to title (eg no Mr.)
+// Name module includes all titles - hide unless professional
+// altered from name.module to vary rendering according to title (eg Mr.)
 function apartik_username_alter(&$name, $account) {
   // Don't alter anonymous users or objects that do not have any user ID.
   if (empty($account->uid)) {
@@ -37,11 +38,15 @@ function apartik_username_alter(&$name, $account) {
   }
   // Real name was loaded/generated via hook_user_load(), so re-use it.
   if (!empty($account->realname)) {
-    $hidden_titles = array(
+    $name = _hide_name_titles($account->realname);
+  }
+}
+
+function _hide_name_titles($name) {
+   $hidden_titles = array(
       'Mr.',
       'Ms.',
       'Mrs.',
       );
-    $name = str_replace($hidden_titles, '', $account->realname);
-  }
+    return str_replace($hidden_titles, '', $name);
 }
